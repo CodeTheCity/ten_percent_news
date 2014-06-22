@@ -15,12 +15,10 @@ database_config = {
   },
 }
 
-p 'env: ', Sinatra::Application.environment
-
 db_config = database_config[Sinatra::Application.environment]
 
 configure do
-  if Sinatra::Application.environment == 'production'
+  if Sinatra::Application.environment == :production
     MongoMapper.setup({'production' => {'uri' => ENV['MONGOHQ_URL']}}, 'production')
   else
     MongoMapper.connection = Mongo::Connection.new(db_config[:host], db_config[:port])

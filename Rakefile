@@ -4,7 +4,7 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new do |task|
   task.rspec_opts = ["-c", "-f progress", "-r ./spec/spec_helper.rb"]
   task.pattern    = 'spec/**/*_spec.rb'
-end
+end if RSpec
 
 require 'mongo_mapper'
 require File.join(File.dirname(__FILE__), '/lib/ten_percent_news')

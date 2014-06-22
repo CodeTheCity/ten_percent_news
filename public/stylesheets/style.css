@@ -9,6 +9,15 @@ body {
   font-size:1.4em;
 }
 
+a.add_story {
+  display: block;
+  padding: 1em;
+  width: 1000px;
+  text-align: center;
+  margin: auto;
+  font-size: 1.4em;
+}
+
 .story {
   background-color:#FFE7CB;
   width:1000px;

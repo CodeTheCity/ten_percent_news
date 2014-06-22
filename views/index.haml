@@ -3,9 +3,10 @@
 .stories
   - stories.each do |story|
     .story
-      %h2.title= story[:title]
-      .piece
-        .picture
-          %img{src: story[:picture_url], alt: story[:picture_alt]}
-        .text= story[:text]
+      %h2.title= story.title
+      - story.snippets.each do |snippet|
+        .snippet
+          .picture
+            %img{src: snippet.picture_url, alt: snippet.picture_alt}
+          .text= snippet.text
 

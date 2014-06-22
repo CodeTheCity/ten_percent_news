@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'mongo_mapper'
 require File.join(File.dirname(__FILE__), '/lib/ten_percent_news')
 

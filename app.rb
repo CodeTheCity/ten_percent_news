@@ -33,3 +33,8 @@ end
 get '/stories/new' do
   haml :new
 end
+
+post '/stories' do
+  Story.create!(params[:story])
+  redirect '/'
+end

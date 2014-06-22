@@ -1,4 +1,54 @@
 %form(action='/stories' method="POST")
-  %label(for="story[title]") Title
-  %input(type="text" name="story[title]")
-  %input(type="submit" value="Add")
+  .field
+    %label(for="story[title]") Title
+    %input(type="text" name="story[title]")
+
+  %hr
+
+  .snippets
+    %fieldset
+      %legend Snippet
+      .field
+        %label(for="story[snippets][][picture_url]") Picture URL
+        %input(type="text" name="story[snippets][][picture_url]")
+      .field
+        %label(for="story[snippets][][picture_alt]") Picture alt text
+        %input(type="text" name="story[snippets][][picture_alt]")
+      .field
+        %label(for="story[snippets][][text]") Text
+        %input(type="text" name="story[snippets][][text]")
+
+  %a.add_snippet(href='#') Add snippet
+
+  .field
+    %input(type="submit" value="Add")
+
+%fieldset.template
+  %legend Snippet
+  .field
+    %label(for="story[snippets][][picture_url]") Picture URL
+    %input(type="text" name="story[snippets][][picture_url]")
+  .field
+    %label(for="story[snippets][][picture_alt]") Picture alt text
+    %input(type="text" name="story[snippets][][picture_alt]")
+  .field
+    %label(for="story[snippets][][text]") Text
+    %input(type="text" name="story[snippets][][text]")
+  .field
+    %a.remove_snippet(href='#') Remove snippet
+
+
+:javascript
+  $(document).ready(function () {
+    $('a.add_snippet').on('click', function (e) {
+      e.preventDefault();
+      var template = $('fieldset.template').clone();
+      template.removeClass('template');
+      $('.snippets').append(template);
+    });
+
+    $(document).on('click', 'a.remove_snippet', function (e) {
+      e.preventDefault();
+      $(this).closest('fieldset').remove();
+    });
+  });

@@ -68,3 +68,7 @@ a.add_story {
 #footer {
 
 }
+
+.template {
+  display: none;
+}

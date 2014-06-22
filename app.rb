@@ -29,3 +29,7 @@ end
 get '/' do
   haml :index, locals: {stories: Story.all}
 end
+
+get '/stories/new' do
+  haml :new
+end

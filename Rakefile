@@ -12,16 +12,29 @@ task :add_stories do
 
   Story.destroy_all
 
-  story = Story.new(title: 'My story')
+  story = Story.new(title: 'Fire at Glasgow art school')
   story.snippets.build({
-    picture_url: 'images/cat.jpg',
-    picture_alt: 'A cat',
-    text: "This is a cat. I like cats. The whole internet likes cats."
+    picture_url: 'images/pic1.png',
+    picture_alt: 'Glasgow School of Art',
+    text: "There has been a fire in the Glasgow School of Art damaging a famous library."
   })
   story.snippets.build({
-    picture_url: 'images/dog.jpg',
-    picture_alt: 'A puppy',
-    text: "This is a puppy. I like puppies. If you don't puppies then you are probably dead inside."
+    picture_url: 'images/pic1.png',
+    picture_alt: 'Glasgow School of Art',
+    text: "There has been a fire in the Glasgow School of Art damaging a famous library."
+  })
+  story.save!
+
+  story = Story.new(title: 'Fire at Glasgow art school')
+  story.snippets.build({
+    picture_url: 'images/pic1.png',
+    picture_alt: 'Glasgow School of Art',
+    text: "There has been a fire in the Glasgow School of Art damaging a famous library."
+  })
+  story.snippets.build({
+    picture_url: 'images/pic1.png',
+    picture_alt: 'Glasgow School of Art',
+    text: "There has been a fire in the Glasgow School of Art damaging a famous library."
   })
   story.save!
 end

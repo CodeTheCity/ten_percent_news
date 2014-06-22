@@ -39,6 +39,7 @@ body {
 
 .pic img {
   border:5px #F8971D solid;
+  width: 200px;
 }
 
 .snippet {

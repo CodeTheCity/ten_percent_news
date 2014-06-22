@@ -1,1 +1,11 @@
 %h1 Welcome to Ten Percent News!
+
+.stories
+  - stories.each do |story|
+    .story
+      %h2.title= story[:title]
+      .piece
+        .picture
+          %img{src: story[:picture_url], alt: story[:picture_alt]}
+        .text= story[:text]
+

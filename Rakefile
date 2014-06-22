@@ -1,5 +1,5 @@
 task :build do |t, args|
-  puts "Current env is #{ENV['RAKE_ENV']}"
+  puts "Current env is #{ENV['RACK_ENV']}"
 end
 # require 'mongo_mapper'
 # require File.join(File.dirname(__FILE__), '/lib/ten_percent_news')

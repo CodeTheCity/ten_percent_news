@@ -15,6 +15,8 @@ database_config = {
   },
 }
 
+p 'env: ', Sinatra::Application.environment
+
 db_config = database_config[Sinatra::Application.environment]
 
 configure do
